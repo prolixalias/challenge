@@ -1,0 +1,13 @@
+forge 'https://forgeapi.puppetlabs.com'
+
+mod 'hunner/hiera',        '1.4.1'
+mod 'jfryman/nginx',       '0.2.7'
+mod 'maestrodev/avahi',    '1.1.0'
+mod 'puppetlabs/apache',   '1.7.1'
+mod 'puppetlabs/firewall', '1.7.2'
+mod 'puppetlabs/inifile',  '1.4.3'
+mod 'puppetlabs/stdlib',   '4.11.0'
+mod 'puppetlabs/apt',      '2.2.1'
+mod 'puppetlabs/concat',   '1.2.5'
+mod 'puppetlabs/vcsrepo',  '1.3.1'
+mod 'stahnma/epel',        '1.2.2'
