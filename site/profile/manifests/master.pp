@@ -67,4 +67,11 @@ class profile::master {
     notify  => Service['pe-puppetserver'],
   }
 
+  route53_cname_record { 'master.fullfrontalingenuity.com.':
+    ensure => 'present',
+    ttl    => '60',
+    values => [ "$::ec2_metadata['public-hostname']" ],
+    zone   => 'fullfrontalingenuity.com.',
+  }
+
 }

@@ -2,6 +2,7 @@
 configuration_message: 'master role configuration being applied.'
 classes:
   - role::master
+  - aws
 git_management_system: 'gitlab'
 gms_server_url: 'https://gitlab-server'
 gms_api_token: 'BDkZfWWnk4LVTLHdAywd'
