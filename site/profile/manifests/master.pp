@@ -69,15 +69,15 @@ class profile::master {
 
   exec { "source_etc_environment":
     provider => shell,
-    command  => "source /etc/environment",
+    command  => "cat /etc/environment | while read lines; do export $lines; done",
     before   => Route53_cname_record['master.fullfrontalingenuity.com.'],
   }
 
   route53_cname_record { 'master.fullfrontalingenuity.com.':
     ensure => 'present',
     ttl    => '60',
-    values => [ "$::ec2_metadata['public-hostname']" ],
-    zone   => 'fullfrontalingenuity.com.',
+    values => [ "$::hostname_public" ],
+    zone   => "$::domain_public.",
   }
 
 }
