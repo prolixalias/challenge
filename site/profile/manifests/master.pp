@@ -70,7 +70,7 @@ class profile::master {
   exec { "source_etc_environment":
     provider => shell,
     command  => "source /etc/environment",
-    before   => Route53_cname_record['master.fullfrontalingenuity.com'],
+    before   => Route53_cname_record['master.fullfrontalingenuity.com.'],
   }
 
   route53_cname_record { 'master.fullfrontalingenuity.com.':
