@@ -67,6 +67,11 @@ class profile::master {
     notify  => Service['pe-puppetserver'],
   }
 
+  package { ['aws-sdk-core','retries']:
+    ensure   => present,
+    provider => 'puppet_gem',
+  }
+
   exec { "source_etc_environment":
     provider => shell,
     command  => "cat /etc/environment | while read lines; do export $lines; done",
