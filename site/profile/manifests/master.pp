@@ -79,10 +79,11 @@ class profile::master {
   }
 
   route53_cname_record { 'master.fullfrontalingenuity.com.':
-    ensure => 'present',
-    ttl    => '60',
-    values => [ "$::hostname_public" ],
-    zone   => "$::domain_public.",
+    ensure  => 'present',
+    ttl     => '60',
+    #values => [ "$::hostname_public" ],
+    values  => [ $::facts['ec2_metadata']['public-hostname'] ],
+    zone    => "$::domain_public.",
   }
 
 }
