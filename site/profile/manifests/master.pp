@@ -87,6 +87,6 @@ class profile::master {
   }
 
   $aws_instances = hiera('aws_instances')
-  create_resources ('ec2_instances', $aws_instances)
+  create_resources ('ec2_instance', $aws_instances)
 
 }
