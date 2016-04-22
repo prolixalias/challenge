@@ -86,4 +86,7 @@ class profile::master {
     zone    => "$::domain_public.",
   }
 
+  $aws_instances = hiera('aws_instances')
+  ec2_instances { $aws_instances: }
+
 }
