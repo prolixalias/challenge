@@ -11,10 +11,10 @@ pe_r10k::postrun:
  - '/usr/local/bin/update-classes.sh'
 
 aws_instances:
-  - consul0:
-      image_id: ami-f77fbeb3
-      instance_type: m3-medium
-      region: us-west-1
-      availability_zone: us-west-1b
-      key_name: vagrant
-      security_groups: puppet
+  consul0:
+    image_id: ami-f77fbeb3
+    instance_type: m3-medium
+    region: us-west-1
+    availability_zone: us-west-1b
+    key_name: vagrant
+    security_groups: puppet
