@@ -12,6 +12,7 @@ pe_r10k::postrun:
 
 aws_instances:
   consul0:
+    ensure: present
     image_id: ami-f77fbeb3
     instance_type: m3-medium
     region: us-west-1
