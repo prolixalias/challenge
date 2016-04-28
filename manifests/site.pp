@@ -30,6 +30,25 @@ node /^master*$/ {
   include ::role::master
 }
 
+node /^pe-201611-master*$/ {
+
+  pe_role { 'paul':
+    ensure => absent,
+  }  
+
+  pe_role { 'architecture-paul':
+    ensure      => present,
+    description => 'This is a description for Paul',
+    permissions => [{"object_type" => "tokens", "action" => "override_lifetime", "instance" => "*"},{"object_type" => "environment", "action" => "deploy_code", "instance" => "*"},],
+  }
+  pe_role { 'architecture-bryan':
+    ensure      => present,
+    description => 'This is a description for Bryan',
+    permissions => [{"object_type" => "tokens", "action" => "override_lifetime", "instance" => "*"},{"object_type" => "environment", "action" => "deploy_code", "instance" => "*"},],
+  }     
+}
+
+
 ### default
 node default {
   #incude a role on any node that specifies it's role via a trusted fact at provision time
