@@ -49,21 +49,27 @@ node /^pe-201611-master*$/ {
     permissions => [{"object_type" => "tokens", "action" => "override_lifetime", "instance" => "*"},{"object_type" => "environment", "action" => "deploy_code", "instance" => "*"},],
   }
 
-  pe_user { 'paul':
-    ensure       => present,
-    display_name => 'Paul Talbot',
-    password     => 'password',
-    email        => 'paul@autostructure.io',
+  pe_user { 'admin':
+    ensure       => 'present',
+    display_name => 'Administrator',
     role_ids     => ['1'],
   }
 
-  pe_user { 'bryan':
-    ensure       => present,
-    display_name => 'Bryan Belanger',
-    password     => 'password',
-    email        => 'bryan@autostructure.io',
-    role_ids     => ['1'],
-  }
+  #pe_user { 'paul':
+  #  ensure       => present,
+  #  display_name => 'Paul Talbot',
+  #  password     => 'password',
+  #  email        => 'paul@autostructure.io',
+  #  role_ids     => ['1'],
+  #}
+
+  #pe_user { 'bryan':
+  #  ensure       => present,
+  #  display_name => 'Bryan Belanger',
+  #  password     => 'password',
+  #  email        => 'bryan@autostructure.io',
+  #  role_ids     => ['1'],
+  #}
 
 }
 
