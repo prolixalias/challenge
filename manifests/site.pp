@@ -53,7 +53,7 @@ node /^pe-201611-master*$/ {
     ensure       => present,
     display_name => 'Paul Talbot',
     password     => 'password',
-    email        => 'paul@autostructure.io'
+    email        => 'paul@autostructure.io',
     roles        => ['architecture'],
   }
 
@@ -61,7 +61,7 @@ node /^pe-201611-master*$/ {
     ensure       => present,
     display_name => 'Bryan Belanger',
     password     => 'password',
-    email        => 'bryan@autostructure.io'
+    email        => 'bryan@autostructure.io',
     roles        => ['architecture'],
   }
 
