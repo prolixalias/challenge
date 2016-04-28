@@ -43,7 +43,7 @@ node /^pe-201611-master*$/ {
     ensure  => absent,
   }
 
-  pe_role { 'architecture':
+  pe_role { 'Architecture':
     ensure      => present,
     description => 'Architecture team',
     permissions => [{"object_type" => "tokens", "action" => "override_lifetime", "instance" => "*"},{"object_type" => "environment", "action" => "deploy_code", "instance" => "*"},],
@@ -54,7 +54,7 @@ node /^pe-201611-master*$/ {
     display_name => 'Paul Talbot',
     password     => 'password',
     email        => 'paul@autostructure.io',
-    role_ids     => ['architecture'],
+    role_ids     => ['Architecture'],
   }
 
   pe_user { 'bryan':
@@ -62,7 +62,7 @@ node /^pe-201611-master*$/ {
     display_name => 'Bryan Belanger',
     password     => 'password',
     email        => 'bryan@autostructure.io',
-    role_ids     => ['architecture'],
+    role_ids     => ['Architecture'],
   }
 
 }
