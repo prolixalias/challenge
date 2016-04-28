@@ -54,7 +54,7 @@ node /^pe-201611-master*$/ {
     display_name => 'Paul Talbot',
     password     => 'password',
     email        => 'paul@autostructure.io',
-    role_ids     => ['Architecture'],
+    role_ids     => ['1'],
   }
 
   pe_user { 'bryan':
@@ -62,7 +62,7 @@ node /^pe-201611-master*$/ {
     display_name => 'Bryan Belanger',
     password     => 'password',
     email        => 'bryan@autostructure.io',
-    role_ids     => ['Architecture'],
+    role_ids     => ['1'],
   }
 
 }
