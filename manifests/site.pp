@@ -49,10 +49,9 @@ node /^pe-201611-master*$/ {
     permissions => [{"object_type" => "tokens", "action" => "override_lifetime", "instance" => "*"},{"object_type" => "environment", "action" => "deploy_code", "instance" => "*"},],
   }
 
-  pe_user { 'admin':
+  pe_user { 'delete_me':
     ensure       => 'present',
-    display_name => 'Administrator',
-    role_ids     => ['1'],
+    display_name => 'Delete Me',
   }
 
   #pe_user { 'paul':
