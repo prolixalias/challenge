@@ -43,10 +43,15 @@ node /^pe-201611-master*$/ {
   }
 
   pe_user { 'delete_this_user':
-    ensure       => 'present',
-    display_name => 'Delete Me',
-    email        => 'delete@me',
+    ensure       => 'absent',
   }
+
+#  pe_user { 'delete_this_user':
+#    ensure       => 'present',
+#    display_name => 'Delete Me',
+#    password     => 'password',
+#    email        => 'delete@me',
+#  }
 
   #pe_user { 'paul':
   #  ensure       => present,
