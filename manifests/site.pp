@@ -32,6 +32,17 @@ node /^master*$/ {
 
 node /^pe-201611-master*$/ {
 
+class { 'gitlab':
+  external_url => 'http://gitlab.puppet-debugging.vlan',
+  gitlab_rails => {
+    'webhook_timeout' => 10,
+    'gitlab_default_theme' => 2,
+  },
+  logging      => {
+    'svlogd_size' => '200 * 1024 * 1024',
+  },
+}
+
   pe_role { 'delete':
     ensure => absent,
   }
