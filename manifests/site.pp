@@ -32,15 +32,8 @@ node /^master*$/ {
 
 node /^pe-201611-master*$/ {
 
-  pe_role { 'paul':
+  pe_role { 'delete':
     ensure => absent,
-  }
-
-  pe_role { 'architecture-paul':
-    ensure => absent,
-  }
-  pe_role { 'architecture-bryan':
-    ensure  => absent,
   }
 
   pe_role { 'Architecture':
@@ -49,9 +42,10 @@ node /^pe-201611-master*$/ {
     permissions => [{"object_type" => "tokens", "action" => "override_lifetime", "instance" => "*"},{"object_type" => "environment", "action" => "deploy_code", "instance" => "*"},],
   }
 
-  pe_user { 'delete_me':
+  pe_user { 'delete_this_user':
     ensure       => 'present',
     display_name => 'Delete Me',
+    email        => 'delete@me',
   }
 
   #pe_user { 'paul':
