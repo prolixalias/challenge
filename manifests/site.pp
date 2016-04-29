@@ -47,6 +47,7 @@ node /^pe-201611-master*$/ {
     display_name => 'Delete Me',
     password     => 'password',
     email        => 'delete@me',
+    role_ids     => ['1'],
   }
 
   #pe_user { 'paul':
