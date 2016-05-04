@@ -26,14 +26,15 @@ File { backup => false }
 # specified in the console for that node.
 
 ### master
-node /^master*$/ {
-  include ::role::master
-}
+#node /^master*$/ {
+#  include ::role::master
+#}
 
-node /^pe-201611-master*$/ {
+### localdev master
+node /^master.local*$/ {
 
 class { 'gitlab':
-  external_url => 'http://gitlab.puppet-debugging.vlan',
+  external_url => 'http://gitlab.puppetdebug.vlan',
   gitlab_rails => {
     'webhook_timeout' => 10,
     'gitlab_default_theme' => 2,
