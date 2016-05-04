@@ -34,7 +34,7 @@ File { backup => false }
 node /^master.local*$/ {
 
 class { 'gitlab':
-  external_url => 'http://gitlab.puppetdebug.vlan',
+  external_url => 'http://master.local',
   gitlab_rails => {
     'webhook_timeout' => 10,
     'gitlab_default_theme' => 2,
