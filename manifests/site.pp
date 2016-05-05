@@ -33,20 +33,16 @@ File { backup => false }
 ### localdev master
 node /^master.local*$/ {
 
-class { 'gitlab':
-  external_url => 'http://master.local',
-  gitlab_rails => {
-    'webhook_timeout' => 10,
-    'gitlab_default_theme' => 2,
-  },
-  logging      => {
-    'svlogd_size' => '200 * 1024 * 1024',
-  },
-}
-
-  pe_role { 'delete':
-    ensure => absent,
-  }
+  #class { 'gitlab':
+  #  external_url => 'http://master.local',
+  #  gitlab_rails => {
+  #    'webhook_timeout' => 10,
+  #    'gitlab_default_theme' => 2,
+  #  },
+  #  logging      => {
+  #    'svlogd_size' => '200 * 1024 * 1024',
+  #  },
+  #}
 
   pe_role { 'Architecture':
     ensure      => present,
@@ -57,7 +53,7 @@ class { 'gitlab':
   pe_user { 'delete_this_user':
     ensure       => 'present',
     display_name => 'Delete Me',
-    password     => 'password',
+    #password     => 'password',
     email        => 'delete@me',
     role_ids     => ['1'],
   }
