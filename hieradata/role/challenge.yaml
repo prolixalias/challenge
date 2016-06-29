@@ -1,5 +1,5 @@
 ---
-configuration_message: 'challange role configuration being applied.'
+configuration_message: 'Workshop - version 2 - challange role configuration being applied.'
 classes:
   - role::challenge
   - firewall
