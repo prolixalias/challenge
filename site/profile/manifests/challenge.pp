@@ -1,9 +1,9 @@
 class profile::challenge {
 
   # debug message to assist in hiera config
-  #notify { 'configuration_message':
-  #  message => hiera('configuration_message'),
-  #}
+  notify { 'configuration_message':
+    message => hiera('configuration_message'),
+  }
 
   hiera_include('classes', '')
 
