@@ -1,5 +1,5 @@
 ---
-message: "This node is using common data"
+message: "Workshop - Version 2 code - This node is using common data"
 
 #Puppet Server Tuning
 puppet_enterprise::master::puppetserver::jruby_max_requests_per_instance: 10000
