@@ -92,5 +92,7 @@ node default {
   #   class { 'my_class': }
 
   # classes from hiera
-  hiera_include('classes', [])
+  #hiera_include('classes', [])
+
+  hiera_include('role_class', '::role')
 }
