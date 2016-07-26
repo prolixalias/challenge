@@ -10,8 +10,8 @@ class profile::master {
 
   hiera_include('classes', '')
 
-  #$hiera_yaml = "${::settings::confdir}/hiera.yaml"
-  $hiera_yaml = "/etc/puppetlabs/code-staging/hiera.yaml"
+  $hiera_yaml = "${::settings::confdir}/hiera.yaml"
+  #$hiera_yaml = "/etc/puppetlabs/code-staging/hiera.yaml"
 
   class { 'hiera':
     hierarchy  => [
@@ -20,6 +20,8 @@ class profile::master {
       'role/%{::role}',
       'common',
     ],
+	eyaml      => true,
+	keysdir    => /etc/puppetlabs/code-staging/keys
     hiera_yaml => $hiera_yaml,
     datadir    => '/etc/puppetlabs/code/environments/%{::environment}/hieradata',
     owner      => 'pe-puppet',
