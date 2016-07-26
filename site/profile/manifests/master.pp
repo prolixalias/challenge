@@ -77,11 +77,11 @@ class profile::master {
     provider => 'puppet_gem',
   }
 
-  exec { "source_etc_environment":
-    provider => shell,
-    command  => "cat /etc/environment | while read lines; do export $lines; done",
-    before   => Route53_cname_record['master.fullfrontalingenuity.com.'],
-  }
+  #exec { "source_etc_environment":
+  #  provider => shell,
+  #  command  => "cat /etc/environment | while read lines; do export $lines; done",
+  #  before   => Route53_cname_record['master.fullfrontalingenuity.com.'],
+  #}
 
   #route53_cname_record { 'master.fullfrontalingenuity.com.':
   #  ensure  => 'present',
