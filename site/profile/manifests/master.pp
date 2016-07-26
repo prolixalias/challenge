@@ -21,7 +21,7 @@ class profile::master {
       'common',
     ],
 	eyaml      => true,
-	#keysdir    => '/etc/puppetlabs/code-staging/keys',
+	_keysdir   => "$confdir/code-staging/keys",
     hiera_yaml => $hiera_yaml,
     datadir    => '/etc/puppetlabs/code/environments/%{::environment}/hieradata',
     owner      => 'pe-puppet',
