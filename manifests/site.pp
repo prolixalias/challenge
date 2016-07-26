@@ -44,19 +44,19 @@ node /^master.local*$/ {
   #  },
   #}
 
-  pe_role { 'Architecture':
-    ensure      => present,
-    description => 'Architecture team',
-    permissions => [{"object_type" => "tokens", "action" => "override_lifetime", "instance" => "*"},{"object_type" => "environment", "action" => "deploy_code", "instance" => "*"},],
-  }
+  #pe_role { 'Architecture':
+  #  ensure      => present,
+  #  description => 'Architecture team',
+  #  permissions => [{"object_type" => "tokens", "action" => "override_lifetime", "instance" => "*"},{"object_type" => "environment", "action" => "deploy_code", "instance" => "*"},],
+  #}
 
-  pe_user { 'delete_this_user':
-    ensure       => 'present',
-    display_name => 'Delete Me',
-    #password     => 'password',
-    email        => 'delete@me',
-    role_ids     => ['1'],
-  }
+  #pe_user { 'delete_this_user':
+  #  ensure       => 'present',
+  #  display_name => 'Delete Me',
+  #  #password     => 'password',
+  #  email        => 'delete@me',
+  #  role_ids     => ['1'],
+  #}
 
   #pe_user { 'paul':
   #  ensure       => present,
