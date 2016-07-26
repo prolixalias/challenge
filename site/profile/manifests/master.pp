@@ -72,10 +72,10 @@ class profile::master {
     notify  => Service['pe-puppetserver'],
   }
 
-  package { ['aws-sdk-core','retries']:
-    ensure   => present,
-    provider => 'puppet_gem',
-  }
+  #package { ['aws-sdk-core','retries']:
+  #  ensure   => present,
+  #  provider => 'puppet_gem',
+  #}
 
   #exec { "source_etc_environment":
   #  provider => shell,
@@ -91,7 +91,7 @@ class profile::master {
   #  zone    => "$::domain_public.",
   #}
 
-  $aws_instances = hiera('aws_instances')
-  create_resources ('ec2_instance', $aws_instances)
+  #$aws_instances = hiera('aws_instances')
+  #create_resources ('ec2_instance', $aws_instances)
 
 }
