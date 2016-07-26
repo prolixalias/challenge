@@ -1,9 +1,12 @@
 class profile::master {
 
   # debug message to assist in hiera config
-  #notify { 'configuration_message':
-  #  message => hiera('configuration_message'),
-  #}
+  notify { 'configuration_message':
+    message => hiera('configuration_message'),
+  }
+  notify { 'message':
+    message => hiera('message'),
+  }
 
   hiera_include('classes', '')
 
