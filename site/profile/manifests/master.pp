@@ -83,13 +83,13 @@ class profile::master {
     before   => Route53_cname_record['master.fullfrontalingenuity.com.'],
   }
 
-  route53_cname_record { 'master.fullfrontalingenuity.com.':
-    ensure  => 'present',
-    ttl     => '60',
-    #values => [ "$::hostname_public" ],
-    values  => [ $::facts['ec2_metadata']['public-hostname'] ],
-    zone    => "$::domain_public.",
-  }
+  #route53_cname_record { 'master.fullfrontalingenuity.com.':
+  #  ensure  => 'present',
+  #  ttl     => '60',
+  #  #values => [ "$::hostname_public" ],
+  #  values  => [ $::facts['ec2_metadata']['public-hostname'] ],
+  #  zone    => "$::domain_public.",
+  #}
 
   $aws_instances = hiera('aws_instances')
   create_resources ('ec2_instance', $aws_instances)
