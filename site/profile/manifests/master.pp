@@ -13,21 +13,21 @@ class profile::master {
   $hiera_yaml = "${::settings::confdir}/hiera.yaml"
   #$hiera_yaml = "/etc/puppetlabs/code-staging/hiera.yaml"
 
-  class { 'hiera':
-    hierarchy  => [
-      'virtual/%{::virtual}',
-      'nodes/%{::hostname}',
-      'role/%{::role}',
-      'common',
-    ],
-	eyaml      => true,
-	_keysdir   => '/etc/puppetlabs/code-staging/keys',
-    hiera_yaml => $hiera_yaml,
-    datadir    => '/etc/puppetlabs/code/environments/%{::environment}/hieradata',
-    owner      => 'pe-puppet',
-    group      => 'pe-puppet',
-    notify     => Service['pe-puppetserver'],
-  }
+  #class { 'hiera':
+  #  hierarchy  => [
+  #    'virtual/%{::virtual}',
+  #    'nodes/%{::hostname}',
+  #    'role/%{::role}',
+  #    'common',
+  #  ],
+  #  #eyaml      => true,
+  #	#_keysdir   => '/etc/puppetlabs/code-staging/keys',
+  #  hiera_yaml => $hiera_yaml,
+  #  datadir    => '/etc/puppetlabs/code/environments/%{::environment}/hieradata',
+  #  owner      => 'pe-puppet',
+  #  group      => 'pe-puppet',
+  #  notify     => Service['pe-puppetserver'],
+  #}
 
   ini_setting { 'puppet.conf hiera_config main section' :
     ensure  => present,
