@@ -3,6 +3,9 @@ forge 'https://forgeapi.puppetlabs.com'
 mod 'prolixalias/env',
   :git => 'https://github.com/prolixalias/env.git'
 
+mod 'prolixalias/puppet-agent_upgrade',
+  :git => 'https://github.com/prolixalias/puppet-agent_upgrade.git'
+
 mod 'hunner/hiera',        '1.4.1'
 mod 'jfryman/nginx',       '0.2.7'
 mod 'maestrodev/avahi',    '1.1.0'
